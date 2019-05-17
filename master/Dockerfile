@@ -1,7 +1,6 @@
-FROM bde2020/spark-base:2.4.0-hadoop2.7
+FROM kotobotov/spark-base:2.2.0-hadoop2.7
 
-MAINTAINER Erika Pauwels <erika.pauwels@tenforce.com>
-MAINTAINER Gezim Sejdiu <g.sejdiu@gmail.com>
+LABEL maintainer="kotobotov"
 
 COPY master.sh /
 

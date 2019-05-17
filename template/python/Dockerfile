@@ -1,6 +1,6 @@
-FROM bde2020/spark-submit:2.4.0-hadoop2.7
+FROM kotobotov/spark-base:2.2.0-hadoop2.7
 
-MAINTAINER Cecile Tonglet <cecile.tonglet@tenforce.com>
+LABEL maintainer="kotobotov"
 
 COPY template.sh /
 
