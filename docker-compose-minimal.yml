@@ -32,7 +32,7 @@ services:
     networks:
       - spark-net
   spark-worker:
-    image: kotobovot/spark-worker:2.2.0-hadoop2.8-hive-java8
+    image: kotobotov/spark-worker:2.2.0-hadoop2.8-hive-java8
     environment:
       - "SPARK_MASTER=spark://spark-master:7077"
     environment:
