@@ -11,6 +11,7 @@ COPY wait-for-step.sh /
 COPY execute-step.sh /
 COPY finish-step.sh /
 
+RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
 RUN apt-get update \
       && apt-get install -y wget \
       && wget https://www.dropbox.com/s/mgb6h7cwkbzct6f/spark-2.2.0-bin-2.8.2.tgz \
