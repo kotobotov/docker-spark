@@ -1,9 +1,9 @@
-current_branch := $(shell git rev-parse --abbrev-ref HEAD)
+current_version := "2.2.0-hadoop2.8-hive-java8"
 build:
-	docker build -t bde2020/spark-base:$(current_branch) ./base
-	docker build -t bde2020/spark-master:$(current_branch) ./master
-	docker build -t bde2020/spark-worker:$(current_branch) ./worker
-	docker build -t bde2020/spark-submit:$(current_branch) ./submit
+	docker build -t kotobotov/spark-base:$(current_version) ./base
+	docker build -t kotobotov/spark-master:$(current_version) ./master
+	docker build -t kotobotov/spark-worker:$(current_version) ./worker
+	docker build -t kotobotov/spark-submit:$(current_version) ./submit
 
 network:
 	docker network create spark-net
