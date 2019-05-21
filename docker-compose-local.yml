@@ -11,7 +11,7 @@ services:
     env_file:
       - ./hadoop-hive.env
     ports:
-      - "50070:50070"
+      - "1070:1070"
   datanode:
     image: bde2020/hadoop-datanode:1.1.0-hadoop2.8-java8
     container_name: datanode
@@ -23,7 +23,7 @@ services:
       namenode:
         condition: service_healthy
     ports:
-      - "50075:50075"
+      - "1075:1075"
   spark-master:
     build: ./master
     container_name: spark-master

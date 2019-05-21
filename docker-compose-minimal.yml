@@ -9,7 +9,7 @@ services:
       CLUSTER_NAME: test
       CORE_CONF_fs_defaultFS: hdfs://namenode:8020
     ports:
-      - 50070:50070
+      - 1070:1070
     networks:
       - spark-net
   datanode:
@@ -18,7 +18,7 @@ services:
       - sparkdatanode:/hadoop/dfs/data
     environment:
       CORE_CONF_fs_defaultFS: hdfs://namenode:8020
-      SERVICE_PRECONDITION: "namenode:50070"
+      SERVICE_PRECONDITION: "namenode:1070"
     networks:
       - spark-net
   spark-master:
@@ -28,7 +28,7 @@ services:
       - 7077:7077
     environment:
       CORE_CONF_fs_defaultFS: hdfs://namenode:8020
-      SERVICE_PRECONDITION: "namenode:50070 datanode:50075"
+      SERVICE_PRECONDITION: "namenode:1070 datanode:1075"
     networks:
       - spark-net
   spark-worker:
